@@ -1,0 +1,9 @@
+[submodule "third_party/AnyLoc"]
+	path = third_party/AnyLoc
+	url = https://github.com/AnyLoc/AnyLoc.git
+[submodule "third_party/ReLoc3r"]
+	path = third_party/ReLoc3r
+	url = https://github.com/ffrivera0/reloc3r.git
+[submodule "third_party/gsplat"]
+	path = third_party/gsplat
+	url = https://github.com/nerfstudio-project/gsplat.git
