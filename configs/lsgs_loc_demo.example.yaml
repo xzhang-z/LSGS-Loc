@@ -1,0 +1,40 @@
+# Usage:
+# python scripts/lsgs_loc_demo.py --config configs/lsgs_loc_demo.example.yaml
+
+# Required
+# COLMAP train split root (contains images/ and sparse/)
+database_root: /path/to/data/train
+# COLMAP test split root (contains images/ and sparse/)
+query_root: /path/to/data/test
+# Output folder for retrieval + pose optimization results
+output_dir: /path/to/output/lsgs_loc_demo
+# One or more 3DGS checkpoints
+ckpt:
+  - /path/to/gsplat/ckpts/ckpt_29999_rank0.pt
+
+# Optional
+img_exts: [jpg, JPG, png]
+model_args: "224"          # 224 or 512
+camera_model: pinhole       # pinhole / ortho / fisheye
+data_factor: 1
+block_id: 5
+device: cuda
+
+# Retrieval
+retrieval_top_k: 3
+retrieval_search_method: l2 # l2 / cosine
+
+# Cache
+keep_top1_only: true
+force_rebuild_cache: false
+
+# Render-only refinement resolution: original or 1600
+render_opt_image_size: original
+
+# World transform matrix source: auto / builtin / txt
+world_transform_source: auto
+# world_transform_txt: /path/to/Transfer to World Coordinates.txt
+
+# Whether to convert translation error to real-world scale
+# true: metric error in meters, false: colmap units
+scale_pose_error: true
